@@ -51,26 +51,42 @@ for (let i = 0; i < 16000000; i++) {
   console.timeEnd("reduce");
 }
 
+// "reduce" loop benchmarking + arr reference
+{
+  console.time("reduce + arr ref");
+
+  let total = data.reduce((acc, curr, i, arr) => {
+    return acc + curr * curr;
+  });
+
+  console.timeEnd("reduce + arr ref");
+}
+
 /**
 Results:
 Node v10.16.3
 
 Test 1
-for: 31.642ms
-for of: 312.842ms
-forEach: 12863.167ms
-reduce: 354.421ms
+for: 31.765ms
+for of: 303.988ms
+forEach: 12998.894ms
+reduce: 410.226ms
+reduce + arr ref: 297.576ms
 
 Test 2:
-for: 31.096ms
-for of: 328.621ms
-forEach: 12726.756ms
-reduce: 358.613ms
+for: 31.053ms
+for of: 299.082ms
+forEach: 12759.283ms
+reduce: 358.045ms
+reduce + arr ref: 257.287ms
 
 Test 3:
-for: 23.144ms
-for of: 303.042ms
-forEach: 12648.506ms
-reduce: 358.985ms
+for: 23.253ms
+for of: 291.254ms
+forEach: 12647.014ms
+reduce: 376.554ms
+reduce + arr ref: 266.013ms
+
+
 
  */

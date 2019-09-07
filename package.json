@@ -1,0 +1,11 @@
+{
+  "name": "forLoops",
+  "version": "1.0.0",
+  "description": "benchamrking for loops in js",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Kristina Stefanova",
+  "license": "MIT"
+}

@@ -1,3 +1,5 @@
+const _ = require("lodash");
+
 // creating an array that will be used for testing
 const data = [];
 for (let i = 0; i < 16000000; i++) {
@@ -62,6 +64,15 @@ for (let i = 0; i < 16000000; i++) {
   console.timeEnd("reduce + arr ref");
 }
 
+{
+  console.time("forEach lodash");
+
+  let total = 0;
+  _.forEach(data, i => (total += i * i));
+
+  console.timeEnd("forEach lodash");
+}
+
 /**
 Results:
 
@@ -75,6 +86,7 @@ for of: 303.988ms
 forEach: 12998.894ms
 reduce: 410.226ms
 reduce + arr ref: 297.576ms
+forEach lodash: 13480.863ms
 
 Test 2:
 for: 31.053ms
@@ -82,6 +94,7 @@ for of: 299.082ms
 forEach: 12759.283ms
 reduce: 358.045ms
 reduce + arr ref: 257.287ms
+forEach lodash:  13108.260ms
 
 Test 3:
 for: 23.253ms
@@ -89,6 +102,7 @@ for of: 291.254ms
 forEach: 12647.014ms
 reduce: 376.554ms
 reduce + arr ref: 266.013ms
+forEach lodash: 13163.742ms
 
 *********************************************************************
 
@@ -159,7 +173,26 @@ reduce + arr ref: 232ms
   }
   console.timeEnd("for 2");
 
+  // create a closure bound to sum; note we never even call this
   function foo() {
     sum = 1;
-  } // create a closure bound to sum; note we never even call this
+  }
 }
+
+/** 
+ * More results:
+Node
+
+Test1: 
+    for 1: 27.865ms
+    for 2: 12925.653ms
+
+Test2:
+    for 1: 29.894ms
+    for 2: 12791.408ms
+
+Test3:
+    for 1: 24.330ms
+    for 2: 12794.630ms
+ * 
+ */

@@ -111,5 +111,33 @@ Test2:
 Test3:
     for 1: 24.330ms
     for 2: 12794.630ms
+
+Test4:
+    for 1: 51.453ms
+    for 2: 23661.034ms
+
+Test5:
+    for 1: 47.450ms
+    for 2: 24620.562ms
+
+Test6:
+    for 1: 64.696ms
+    for 2: 22486.042ms
+
+Test7:
+    for 1: 55.235ms
+    for 2: 22686.909ms
+
+Test8:
+    for 1: 42.113ms
+    for 2: 23405.909ms
+
+Test9:
+    for 1: 47.938ms
+    for 2: 24845.612ms
+
+Test10:
+    for 1: 47.657ms
+    for 2: 24403.266ms
  * 
  */
